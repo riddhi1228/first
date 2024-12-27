@@ -10,6 +10,9 @@ html, body {
     margin: 0;
     background-image: url("Screenshot\ 2024-07-18\ 193234.jpg");
 }
+#navbar a:hover {
+  background-color: rgb(207, 129, 142);
+}
 
 #navbar {
     z-index: 10;
