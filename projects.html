@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Riddhi Agarwal</title>
+    <title>Projects - Riddhi Agarwal</title>
     <link rel="stylesheet" href="style1.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <!-- Floating Particles Background -->
     <canvas aria-hidden="true" id="particles-canvas"></canvas>
-    <!-- Navigation Bar -->
+
     <nav class="navbar">
         <div class="nav-container">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="abouut.html" class="active">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="abouut.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="Contact.html">Contact</a></li>
             </ul>
             <button class="theme-toggle" id="theme-toggle">
@@ -26,90 +25,146 @@
         </div>
     </nav>
 
-    <!-- About Section -->
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text-col" style="flex: 1; max-width: 100%;">
-                <h1 class="greeting">About</h1>
-                <h1 class="name">Riddhi Agarwal</h1>
-                <h1 class="title">Developer &amp; Open-Source Contributor</h1>
-                <p class="intro" style="font-size: 1.1rem; line-height: 1.8;">I'm a first-year student at The LNMIIT Jaipur, pursuing my engineering degree with a focus on building things that matter.</p>
-                <p class="intro" style="font-size: 1rem;">My journey into programming started with Python, and since then, I've built Dockerized backend pipelines, created PDF parsing systems, and contributed to open-source through GSoC proposals. I'm particularly drawn to the intersection of mathematics and code — linear algebra, complex analysis, and CFD simulation are areas I'm actively developing expertise in.</p>
-                <p class="intro" style="font-size: 1rem;">Beyond the keyboard, I love playing guitar in my free time. It keeps me creative and grounded. I've also worked on web development projects and am always looking to expand my horizons — right now, I'm eyeing Web3, Blockchain, CyberSec, and Machine Learning as my next learning frontiers.</p>
-                <p class="intro" style="font-size: 1rem;">I believe in continuous growth, clean solutions, and the power of open source. Feel free to explore my work, reach out, or just say hi!</p>
+        <div class="hero-content" style="flex-direction: column; align-items: center;">
+            <div class="hero-text-col">
+                <h1 class="greeting">My Work</h1>
+                <h1 class="name">Projects</h1>
+                <p class="intro">A collection of repositories, experiments, and open-source contributions.
+                    Explore the code, star what interests you, and feel free to reach out.</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills">
-        <h2 class="section-title reveal">My Skills</h2>
-        <div class="skills-grid reveal-child">
-            <div class="skill-card">
-                <i class="fab fa-python skill-icon"></i>
-                <h3>Python Development</h3>
-                <p>CLI design, batch processing, file handling, PDF parsing pipelines</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 80%"></div>
+    <!-- Projects Section -->
+    <section class="projects-preview">
+        <h2 class="section-title reveal">My Repositories</h2>
+        <div class="projects-grid reveal-child">
+
+            <!-- handdetector -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Hand Detector</h3>
+                    <p>Computer vision project for real-time hand detection and tracking using webcam feed.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Computer Vision</span>
+                    </div>
+                    <a href="https://github.com/riddhi1228/handdetector" target="_blank" class="project-link">
+                        View on GitHub <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-layer-group skill-icon"></i>
-                <h3>Data Structures &amp; Algorithms</h3>
-                <p>Trees, heaps, graphs, BST, BFS/DFS, linked lists, stacks, queues</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 75%"></div>
+
+            <!-- adobe -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Adobe Clone</h3>
+                    <p>A web development project recreating Adobe-style interfaces and functionality.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Web Development</span>
+                    </div>
+                    <a href="https://github.com/riddhi1228/adobe" target="_blank" class="project-link">
+                        View on GitHub <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
-            <div class="skill-card">
-                <i class="fab fa-docker skill-icon"></i>
-                <h3>Docker &amp; Backend</h3>
-                <p>Containerizing Python systems, mounted volumes, entrypoint workflows</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 70%"></div>
+
+            <!-- FEA Learning -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>FEA Learning</h3>
+                    <p>Resources and code related to Finite Element Analysis — complementing CFD and simulation studies.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>FEA</span>
+                        <span>Simulation</span>
+                    </div>
+                    <a href="https://github.com/riddhi1228/fea_learning" target="_blank" class="project-link">
+                        View on GitHub <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-pen-nib skill-icon"></i>
-                <h3>Technical Writing</h3>
-                <p>GSoC proposals, design docs, deliverable timelines, problem statements</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 75%"></div>
+
+            <!-- Calculator -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Calculator App</h3>
+                    <p>A JavaScript-based calculator application with UI, demonstrating DOM manipulation and event handling.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>HTML/CSS</span>
+                    </div>
+                    <a href="https://github.com/riddhi1228/calculator" target="_blank" class="project-link">
+                        View on GitHub <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-calculator skill-icon"></i>
-                <h3>Mathematics</h3>
-                <p>Linear algebra, complex analysis, eigenvalues, Cauchy-Riemann, harmonics</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 80%"></div>
+
+            <!-- PDF Pipeline (referenced from Home) -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>PDF Heading Extraction Pipeline</h3>
+                    <p>Dockerized Python pipeline that extracts structured headings and outlines from PDF documents.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Docker</span>
+                        <span>CLI</span>
+                        <span>PDF Parsing</span>
+                    </div>
+                    <a href="https://github.com/riddhi1228" target="_blank" class="project-link">
+                        View All Repos <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-wind skill-icon"></i>
-                <h3>CFD &amp; Simulation</h3>
-                <p>SU2 framework, FWH acoustics, flow simulation fundamentals</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 50%"></div>
+
+            <!-- SU2 Fork -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>SU2 Multiphysics Fork</h3>
+                    <p>Fork of the open-source SU2 suite used for CFD simulation, acoustics, and multiphysics design.</p>
+                    <div class="project-tags">
+                        <span>C++</span>
+                        <span>CFD</span>
+                        <span>Open Source</span>
+                    </div>
+                    <a href="https://github.com/riddhi1228/SU2" target="_blank" class="project-link">
+                        View on GitHub <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-brain skill-icon"></i>
-                <h3>Machine Learning</h3>
-                <p>Data analysis, model building, and ML-based problem solving</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 55%"></div>
+
+            <!-- Portfolio -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Portfolio Website</h3>
+                    <p>This very portfolio — responsive, animated, and built with clean HTML/CSS/JS and particle effects.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <a href="https://github.com/riddhi1228/first" target="_blank" class="project-link">
+                        View Source <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-bug skill-icon"></i>
-                <h3>Debugging &amp; Troubleshooting</h3>
-                <p>Identifying edge cases, diagnosing system and code-level failures</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 85%"></div>
-                </div>
-            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="https://github.com/riddhi1228" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px;">
+                <i class="fab fa-github"></i> View All on GitHub
+            </a>
         </div>
     </section>
 
@@ -132,7 +187,7 @@
             });
         }
 
-        // Scroll Reveal via Intersection Observer (re-triggers on every scroll)
+        // Scroll Reveal
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -148,7 +203,7 @@
             revealObserver.observe(el);
         });
 
-        // ── Floating Particles Canvas ──
+        // Particles
         (function() {
             const canvas = document.getElementById('particles-canvas');
             if (!canvas) return;

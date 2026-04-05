@@ -3,29 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="contact.css">
+    <title>Contact - Riddhi Agarwal</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .contact-section {
+            padding: 150px 5% 100px;
+            min-height: 100vh;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+        .contact-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .contact-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--accent-purple);
+            margin-bottom: 18px;
+        }
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .contact-card a,
+        .contact-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+        .contact-card a:hover {
+            color: var(--accent-purple);
+        }
+        #name {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+        .contact-section .section-title {
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
-    <div id="navbar">
-        <div id="photo-container">
-          <div id="photo"></div>
-          <div id="name">Riddhi-Agarwal</div>
-          <a id="home" href="https://riddhi1228.github.io/first/">HOME</a>
-          <a id="about" href="https://riddhi1228.github.io/about/">ABOUT-US</a>
-          <a id="contact" href="https://riddhi1228.github.io/contact/">CONTACT-US</a>
-            <a id="project" href="https://riddhi1228.github.io/calculator/">PROJECT</a>
+    <canvas aria-hidden="true" id="particles-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="abouut.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="Contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
-      </div>
-      <div id="abouts">
-        <div id="photo1"></div>
-        <div id="text">Sandeep Saini
-        </br>
-            Assistant Professor
-           </br>
-            The LNMIIT Jaipur
-        </br>
-            +91-9983180460
-      </div>
+    </nav>
+
+    <section class="contact-section">
+        <div class="hero-content" style="flex-direction: column; align-items: center;">
+            <div class="hero-text-col">
+                <h1 class="greeting">Get In Touch</h1>
+                <h1 class="name">Contact</h1>
+                <p id="name">Feel free to reach out — I'd love to connect.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title reveal">Find Me</h2>
+        <div class="contact-grid reveal-child">
+            <div class="contact-card">
+                <a href="https://github.com/riddhi1228" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>@riddhi1228</p>
+                </a>
+            </div>
+            <div class="contact-card">
+                <a href="https://www.linkedin.com/in/riddhi-undefined-280971314/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Riddhi Agarwal</p>
+                </a>
+            </div>
+            <div class="contact-card">
+                <a href="https://www.instagram.com/riddhiagarwal1228/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <p>@riddhiagarwal1228</p>
+                </a>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Riddhi Agarwal. Built with passion and code.</p>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        let isDark = false;
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                isDark = !isDark;
+                document.body.classList.toggle('dark', isDark);
+                themeToggle.innerHTML = isDark
+                    ? '<i class="fas fa-sun"></i>'
+                    : '<i class="fas fa-moon"></i>';
+            });
+        }
+
+        // Scroll Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    void entry.target.offsetWidth;
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal, .reveal-child').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Particles
+        (function() {
+            const canvas = document.getElementById('particles-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            const PARTICLE_DENSITY = 0.00008;
+            const MAX_SPEED = 0.5;
+            const MOUSE_RADIUS = 150;
+            const MOUSE_FORCE = 0.03;
+            const CONNECTION_DIST = 120;
+            const OPACITY_BASE = 0.3;
+            const OPACITY_MAX = 0.7;
+            const PARTICLE_SIZE = 2;
+
+            let particles = [];
+            let mouse = { x: -9999, y: -9999 };
+            let dpr, cw, ch;
+
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function resize() {
+                dpr = window.devicePixelRatio || 1;
+                cw = window.innerWidth;
+                ch = window.innerHeight;
+                canvas.width = cw * dpr;
+                canvas.height = ch * dpr;
+                canvas.style.width = cw + 'px';
+                canvas.style.height = ch + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                initParticles();
+            }
+
+            function initParticles() {
+                const count = Math.floor(cw * ch * PARTICLE_DENSITY);
+                particles = [];
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: Math.random() * cw,
+                        y: Math.random() * ch,
+                        vx: (Math.random() - 0.5) * MAX_SPEED,
+                        vy: (Math.random() - 0.5) * MAX_SPEED
+                    });
+                }
+            }
+
+            function update() {
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    const dx = p.x - mouse.x;
+                    const dy = p.y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < MOUSE_RADIUS) {
+                        const force = (1 - dist / MOUSE_RADIUS) * MOUSE_FORCE;
+                        p.vx += (dx / dist) * force;
+                        p.vy += (dy / dist) * force;
+                    }
+                    p.vx *= 0.98;
+                    p.vy *= 0.98;
+                    const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+                    if (speed > MAX_SPEED * 2) {
+                        p.vx = (p.vx / speed) * MAX_SPEED * 2;
+                        p.vy = (p.vy / speed) * MAX_SPEED * 2;
+                    }
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0) p.x = cw;
+                    if (p.x > cw) p.x = 0;
+                    if (p.y < 0) p.y = ch;
+                    if (p.y > ch) p.y = 0;
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, cw, ch);
+                if (!prefersReduced) {
+                    for (let i = 0; i < particles.length; i++) {
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const dx2 = particles[i].x - particles[j].x;
+                            const dy2 = particles[i].y - particles[j].y;
+                            const dSq = dx2 * dx2 + dy2 * dy2;
+                            if (dSq < CONNECTION_DIST * CONNECTION_DIST) {
+                                const alpha = (1 - Math.sqrt(dSq) / CONNECTION_DIST) * 0.15;
+                                ctx.beginPath();
+                                ctx.strokeStyle = `rgba(176, 176, 208, ${alpha})`;
+                                ctx.lineWidth = 0.5;
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                }
+                for (const p of particles) {
+                    const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+                    const size = PARTICLE_SIZE + speed;
+                    const alpha = Math.min(OPACITY_BASE + speed / MAX_SPEED, OPACITY_MAX);
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(176, 176, 208, ${alpha})`;
+                    ctx.fill();
+                }
+            }
+
+            function loop() {
+                update();
+                draw();
+                requestAnimationFrame(loop);
+            }
+
+            window.addEventListener('mousemove', function(e) {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            resize();
+
+            if (prefersReduced) {
+                draw();
+            } else {
+                loop();
+            }
+
+            window.addEventListener('resize', resize);
+        })();
+    </script>
 </body>
 </html>
