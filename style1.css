@@ -623,3 +623,21 @@ body {
         padding: 120px 3% 80px;
     }
 }
+
+/* Education Section */
+.education {
+    padding: 80px 5%;
+    background-color: transparent;
+}
+
+/* Leadership & Mentorship Section */
+.leadership {
+    padding: 80px 5%;
+    background-color: transparent;
+}
+
+/* Research Interests & Goals Section */
+.research {
+    padding: 80px 5%;
+    background-color: transparent;
+}
